@@ -5,17 +5,17 @@ require 'directors_database'
 # [3,4,5], [6]] => [1,2,3,4,5,6].
 
 def flatten_a_o_a(aoa)
-  result = []
+  a = []
   aoa_i = 0
   while aoa_i < aoa.length do
     inner_i = 0
     while inner_i < aoa[aoa_i].length do
-      result << aoa[aoa_i][inner_i]
+      a << aoa[aoa_i][inner_i]
       inner_i += 1
     end
     aoa_i += 1
   end
-  result
+  a
 end
 
 def movie_with_director_name(director_name, movie_data)
