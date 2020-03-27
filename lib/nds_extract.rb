@@ -75,7 +75,7 @@ def movies_with_directors_set(source)
      new_array << movies_with_director_key(name_key, movie_value)
      counter += 1   
   end
-  new_rray
+  new_array
 end
 
 # ----------------    End of Your Code Region --------------------
