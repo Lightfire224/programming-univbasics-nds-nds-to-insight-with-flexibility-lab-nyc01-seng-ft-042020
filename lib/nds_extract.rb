@@ -42,42 +42,40 @@ def movie_with_director_name(director_name, movie_data)
 end
 
 def movies_with_director_key(name, movies_collection)
-  newAr=[]
-  i=0
-  while i<movies_collection.length do
-    newAr << movie_with_director_name(name, movies_collection[i])
-    i+=1
+  new_array= []
+  counter = 0
+  while counter <movies_collection.length do
+    new_array << movie_with_director_name(name, movies_collection[counter])
+    counter +=1
   end
-  newAr
+  new_array
 end
 
 def gross_per_studio(collection)
   new_hash = {}
-  i=0
-  while i<collection.length do
-    if !new_hash[collection[i][:studio]] #if not exist
-      new_hash[collection[i][:studio]] = collection[i][:worldwide_gross] 
+  counter=0
+  while counter<collection.length do
+    if !new_hash[collection[counter][:studio]] #if not exist
+      new_hash[collection[counter][:studio]] = collection[counter][:worldwide_gross] 
     else
-      new_hash[collection[i][:studio]] += collection[i][:worldwide_gross]
+      new_hash[collection[counter][:studio]] += collection[counter][:worldwide_gross]
     end
-    i += 1
+    counter += 1
   end
   new_hash
 end
 
 
 def movies_with_directors_set(source)
-  newAr = []
-  i = 0
-  while i < source.length do
-     name_key = source[i][:name]
-     movie_value= source[i][:movies]
-     newAr << movies_with_director_key(name_key, movie_value)
-     i += 1   #movies_with_director_key(name, movies_collection)
-               # * name: A director's name
-               # * movies_collection: An Array of Hashes where each Hash represents a movie
+  new_array = []
+  counter = 0
+  while counter < source.length do
+     name_key = source[counter][:name]
+     movie_value= source[counter][:movies]
+     new_array << movies_with_director_key(name_key, movie_value)
+     counter += 1   
   end
-  newAr
+  new_rray
 end
 
 # ----------------    End of Your Code Region --------------------
